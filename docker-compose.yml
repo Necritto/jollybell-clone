@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  front:
+    image: docker-front-dev
+    restart: always
+    build:
+      context: ./${BASE_FRONT_PATH}
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./${BASE_FRONT_PATH}:/front
